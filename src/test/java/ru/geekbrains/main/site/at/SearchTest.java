@@ -1,18 +1,21 @@
 package ru.geekbrains.main.site.at;
 
+
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.junit.jupiter.api.Test;
 import ru.geekbrains.main.site.at.basis.BasisTest;
 
-import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
+@DisplayName("Проверка поиска")
 public class SearchTest extends BasisTest {
 //    Перейти на сайт https://geekbrains.ru/courses
 //    Нажать на кнопку Поиск
@@ -27,7 +30,7 @@ public class SearchTest extends BasisTest {
 //            Проекты и компании
 
     @Test
-    public void name() throws InterruptedException {
+    void name() throws InterruptedException {
         driver.manage().window().maximize();
         driver.get("https://geekbrains.ru/career");
 
@@ -64,7 +67,6 @@ public class SearchTest extends BasisTest {
 
         WebElement textProjectsAndCompanies = driver.findElement(By.xpath("//header/h2[text()='Проекты и компании']"));
         WebElement textGeekProjectsAndCompanies = driver.findElement(By.cssSelector("[class*=\"company-item\"] [href*=\"682\"]"));
-        //assertThat(textGeekProjectsAndCompanies.getText(),containsStringIgnoringCase("GeekBrains"));
 
         WebDriverWait wait = new WebDriverWait(driver, 40);
 
@@ -75,6 +77,6 @@ public class SearchTest extends BasisTest {
         wait.until(ExpectedConditions.textToBePresentInElement(textForum,"Форум"));
         wait.until(ExpectedConditions.textToBePresentInElement(textTests,"Тесты"));
         wait.until(ExpectedConditions.textToBePresentInElement(textProjectsAndCompanies,"Проекты и компании"));
-
+//
     }
 }
