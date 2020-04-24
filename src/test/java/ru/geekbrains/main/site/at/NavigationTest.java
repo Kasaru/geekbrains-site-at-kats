@@ -5,7 +5,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.main.site.at.basis.BasisTest;
-
 import java.util.stream.Stream;
 
 @DisplayName("Проверка навигации")
@@ -19,6 +18,7 @@ public class NavigationTest extends BasisTest {
     @ParameterizedTest(name = "{index} => переход на страницу {0}")
     @MethodSource("stringProvider")
     void checkNavigation(String namePage) {
+        driver.manage().window().maximize();
         driver.get("https://geekbrains.ru/career");
 
         PageFactory.initElements(driver, Page.class)
