@@ -1,5 +1,6 @@
 package ru.geekbrains.main.site.at;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,18 +27,25 @@ public class Navigation {
     @FindBy(css = "[class*=\"main-page-hidden\"] [href=\"/career\"]")
     private WebElement buttonCareer;
 
+    @FindBy(css = "[class=\"svg-icon icon-logo\"]")
+    private WebElement icon;
+
     private WebDriver driver;
 
     public Navigation(WebDriver driver) {
         this.driver = driver;
     }
 
-
-    public Page clickButton(String nameButton) {
+    @Step(value = "Переход на страницы по нажатию кнопок навигации")
+    public MainPage clickButton(String nameButton) {
         switch (nameButton) {
+            case "Главная": {
+                icon.click();
+                return PageFactory.initElements(driver, HomePage.class);
+            }
             case "Курсы": {
                 buttonCourses.click();
-                break;
+                return PageFactory.initElements(driver, CoursePage.class);
             }
             case "Вебинары": {
                 buttonEvents.click();
@@ -64,7 +72,7 @@ public class Navigation {
             }
         }
 
-        return PageFactory.initElements(driver, Page.class);
+        return PageFactory.initElements(driver, HomePage.class);
 
     }
 }

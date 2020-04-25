@@ -24,11 +24,11 @@ public class AuthPage {
         private WebElement buttonSignIn;
 
         @Step("авторизация с логин : {login} , пароль : {password}")
-        public Page authorization(String login, String password) {
+        public HomePage authorization(String login, String password) {
             inputLogin.sendKeys(login);
             inputPassword.sendKeys(password);
             buttonSignIn.click();
-            return PageFactory.initElements(driver, Page.class);
+            return PageFactory.initElements(driver, HomePage.class);
         }
 }
 

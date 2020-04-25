@@ -1,5 +1,6 @@
 package ru.geekbrains.main.site.at;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,7 +38,7 @@ public class Block {
     public Block(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step(value = "Ожидание загрузки результатов поиска")
     public Search Waiting() {
         WebDriverWait wait = new WebDriverWait(driver, 40);
         wait.until(ExpectedConditions.textToBePresentInElement(textProfession, "Профессии"));

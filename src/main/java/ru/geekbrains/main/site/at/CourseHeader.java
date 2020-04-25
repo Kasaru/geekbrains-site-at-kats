@@ -1,5 +1,6 @@
 package ru.geekbrains.main.site.at;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,33 +25,31 @@ public class CourseHeader {
     @FindBy(css = "[href*=\"https://forbusiness\"]")
     private WebElement buttonCompanies;
 
+         private WebDriver driver;
+        @Step(value = "Переход по разделам страницы Курсы")
+        public CoursePage clickButton(String nameButton) {
+            switch (nameButton) {
+                case "Профессии": {
+                    buttonProfessions.click();
+                    break;
+                }
+                case "Бесплатные интенсивы": {
+                    buttonFreeIntensive.click();
+                    break;
+                }
+                case "Курсы": {
+                    buttonCourses.click();
+                    break;
+                }
+                case "Компаниям": {
+                    buttonCompanies.click();
+                    break;
+                }
+                default: {
+                    throw new NotFoundException("Не найдена кнопка с именем: " + nameButton);
+                }
+            }
 
-    private WebDriver driver;
-
-    public CoursePage clickButton(String nameButton) {
-        switch (nameButton) {
-            case "Профессии": {
-                buttonProfessions.click();
-                break;
-            }
-            case "Бесплатные интенсивы": {
-                buttonFreeIntensive.click();
-                break;
-            }
-            case "Курсы": {
-                buttonCourses.click();
-                break;
-            }
-            case "Компаниям": {
-                buttonCompanies.click();
-                break;
-            }
-            default: {
-                throw new NotFoundException("Кнопка с именем " + nameButton + " не найдена");
-            }
+            return PageFactory.initElements(driver, CoursePage.class);
         }
-
-        return PageFactory.initElements(driver, CoursePage.class);
     }
-
-}

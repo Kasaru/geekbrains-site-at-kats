@@ -1,4 +1,6 @@
 package ru.geekbrains.main.site.at;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,12 +33,20 @@ public class Search {
         block = PageFactory.initElements(driver, Block.class);
     }
     private Block block;
-
+    @Step(value = "Введение тестовых данных java")
     public Search inputSearch(String word){
         buttonSearch.click();
         inputSearch.sendKeys(word);
         return this;
     }
+    @Step(value = "Проверка отображаемых в блоках значений")
+    @Description(value =
+            "Профессий не менее чем 2\n" +
+            "Курсов более 15\n" +
+            "Вебинаров больше чем 180, но меньше 300\n" +
+            "Блогов более 300\n" +
+            "Форумов не 350\n" +
+            "Тестов не 0")
     public Search QuantityAssert() {
     assertThat(Integer.parseInt(quantityProfession.getText()), greaterThanOrEqualTo(2));
     assertThat(Integer.parseInt(quantityCourses.getText()), greaterThan(15));

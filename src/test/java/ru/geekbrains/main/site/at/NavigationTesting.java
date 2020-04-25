@@ -8,7 +8,7 @@ import ru.geekbrains.main.site.at.basis.BasisTest;
 import java.util.stream.Stream;
 
 @DisplayName("Проверка навигации")
-public class NavigationTest extends BasisTest {
+public class NavigationTesting extends BasisTest {
 
     static Stream<String> stringProvider() {
         return Stream.of("Курсы", "Вебинары", "Форум", "Блог", "Тесты", "Карьера");

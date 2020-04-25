@@ -1,5 +1,6 @@
 package ru.geekbrains.main.site.at;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,12 +28,12 @@ public class Page {
     @FindBy(css = "div button svg[class=\"svg-icon icon-popup-close-button \"]")
     private WebElement buttonPopUpClosed;
 
-
+    @Step(value = "Закрытие всплывающего окна")
     public Page popUpClosed() {
         buttonPopUpClosed.click();
         return this;
     }
-
+    @Step(value = "Проверка соответствия имени страницы")
     public Page checkNamePage(String exampleNamePage) {
         String headerPageText = headerPage.getText();
         assertThat(headerPageText, equalToCompressingWhiteSpace(exampleNamePage));
@@ -42,7 +43,5 @@ public class Page {
     public Navigation getNavigation() {
         return navigation;
     }
-    public CourseHeader getCourseHeader() {
-        return courseHeader;
-    }
+
 }

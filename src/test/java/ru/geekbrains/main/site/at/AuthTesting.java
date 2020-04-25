@@ -2,6 +2,7 @@ package ru.geekbrains.main.site.at;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
 import io.qameta.allure.TmsLink;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,11 +13,10 @@ import ru.geekbrains.main.site.at.basis.BasisTest;
 
 @Execution(ExecutionMode.CONCURRENT)
 @DisplayName("Проверка авторизации")
-public class AuthTest extends BasisTest {
+public class AuthTesting extends BasisTest {
         @DisplayName("Вход с валидным логином/паролем")
         @Test
-        @Issue(value = "https://geekbrains.ru")
-        @TmsLink(value = "https://geekbrains.ru/login")
+        @Link(value = "https://geekbrains.ru/login")
         @Description(value = "Проверка работоспособности модуля авторизации https://geekbrains.ru/login")
         void checkSignIn() {
             String login = "hao17583@bcaoo.com";
