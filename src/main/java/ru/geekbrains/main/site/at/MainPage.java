@@ -32,7 +32,7 @@ public abstract class MainPage {
             buttonPopUpClosed.click();
             return this;
         }
-        @Step(value = "Проверка соответсвия имени страницы")
+        @Step(value = "Проверка соответсвия имени страницы.")
         public MainPage checkNamePage(String exampleNamePage) {
             new WebDriverWait(driver, 30)
                     .until(ExpectedConditions.textToBePresentInElement(headerTitlePage, exampleNamePage));

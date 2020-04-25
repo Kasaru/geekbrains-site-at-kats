@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.main.site.at.basis.BasisTest;
 
 public class SearchTesting extends BasisTest {
-    @DisplayName("Тест поиска")
+    @DisplayName("Тест модуля поиска")
     @ParameterizedTest(name = "Тест поиска java")
     @ValueSource(strings = "java")
      void checkSearch(String input){

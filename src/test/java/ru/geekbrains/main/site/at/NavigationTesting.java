@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.main.site.at.basis.BasisTest;
 import java.util.stream.Stream;
 
-@DisplayName("Проверка навигации")
+@DisplayName("Проверка навигации.")
 public class NavigationTesting extends BasisTest {
 
     static Stream<String> stringProvider() {

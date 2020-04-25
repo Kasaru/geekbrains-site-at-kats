@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.main.site.at.basis.BasisTest;
 
 public class CourseTesting extends BasisTest {
-    @DisplayName("Вход с валидным логином/паролем")
+    @DisplayName("Вход с валидным логином и паролем")
     @Test
     void checkSingIn() {
         String login = "hao17583@bcaoo.com";

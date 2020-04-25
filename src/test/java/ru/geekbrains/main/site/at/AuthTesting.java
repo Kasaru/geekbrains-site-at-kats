@@ -12,9 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.main.site.at.basis.BasisTest;
 
 @Execution(ExecutionMode.CONCURRENT)
-@DisplayName("Проверка авторизации")
+@DisplayName("Проверка авторизации.")
 public class AuthTesting extends BasisTest {
-        @DisplayName("Вход с валидным логином/паролем")
+        @DisplayName("Вход с валидным логином и паролем")
         @Test
         @Link(value = "https://geekbrains.ru/login")
         @Description(value = "Проверка работоспособности модуля авторизации https://geekbrains.ru/login")
