@@ -1,5 +1,6 @@
 package ru.geekbrains.main.site.at;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,11 +11,15 @@ import static org.hamcrest.Matchers.equalToCompressingWhiteSpace;
 
 public class Page {
 
+    private CourseHeader courseHeader;
+
     public Page(WebDriver driver) {
         navigation = PageFactory.initElements(driver, Navigation.class);
     }
 
     private Navigation navigation;
+
+    private WebDriver driver;
 
     @FindBy(css = "[class=\"gb-header__title\"]")
     private WebElement headerPage;
@@ -36,5 +41,8 @@ public class Page {
 
     public Navigation getNavigation() {
         return navigation;
+    }
+    public CourseHeader getCourseHeader() {
+        return courseHeader;
     }
 }
