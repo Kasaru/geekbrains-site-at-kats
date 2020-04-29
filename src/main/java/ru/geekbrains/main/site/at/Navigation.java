@@ -36,7 +36,7 @@ public class Navigation {
         this.driver = driver;
     }
 
-    @Step(value = "Переход на страницы по нажатию кнопок навигации")
+    @Step(value = "Переход на страницы по нажатию кнопок навигации ")
     public MainPage clickButton(String nameButton) {
         switch (nameButton) {
             case "Главная": {

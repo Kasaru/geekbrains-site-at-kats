@@ -33,7 +33,7 @@ public class Page {
         buttonPopUpClosed.click();
         return this;
     }
-    @Step(value = "Проверка соответствия имени страницы")
+    @Step(value = "Проверка соответствия имени страницы ")
     public Page checkNamePage(String exampleNamePage) {
         String headerPageText = headerPage.getText();
         assertThat(headerPageText, equalToCompressingWhiteSpace(exampleNamePage));

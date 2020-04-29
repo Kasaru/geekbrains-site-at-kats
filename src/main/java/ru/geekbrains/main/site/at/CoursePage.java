@@ -22,7 +22,7 @@ public class CoursePage extends MainPage{
             }
             return this;
         }
-        @Step(value = "Проверка соответствия отображаемых курсов")
+        @Step(value = "Проверка соответствия отображаемых курсов ")
         public CoursePage checkingDisplayedCourses(String... args) {
             for (String test : args) {
                 driver.findElement(By.xpath("//a/div/div/span[text()='" + test + "']"));

@@ -39,7 +39,7 @@ public class Search {
         inputSearch.sendKeys(word);
         return this;
     }
-    @Step(value = "Проверка отображаемых в блоках значений")
+    @Step(value = "Проверка отображаемых в блоках значений ")
     @Description(value =
             "Профессий не менее чем 2\n" +
             "Курсов более 15\n" +

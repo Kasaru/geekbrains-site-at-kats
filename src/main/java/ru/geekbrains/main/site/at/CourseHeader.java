@@ -26,7 +26,7 @@ public class CourseHeader {
     private WebElement buttonCompanies;
 
          private WebDriver driver;
-        @Step(value = "Переход по разделам страницы Курсы")
+        @Step(value = "Переход по разделам страницы Курсы ")
         public CoursePage clickButton(String nameButton) {
             switch (nameButton) {
                 case "Профессии": {

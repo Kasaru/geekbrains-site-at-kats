@@ -7,14 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.main.site.at.basis.BasisTest;
 import java.util.stream.Stream;
 
-@DisplayName("Проверка навигации.")
+@DisplayName("Проверка навигации")
 public class NavigationTesting extends BasisTest {
 
     static Stream<String> stringProvider() {
         return Stream.of("Курсы", "Вебинары", "Форум", "Блог", "Тесты", "Карьера");
     }
 
-    @DisplayName("Нажатие в навигации")
+    @DisplayName("Нажатие в навигации ")
     @ParameterizedTest(name = "{index} => переход на страницу {0}")
     @MethodSource("stringProvider")
     void checkNavigation(String namePage) {

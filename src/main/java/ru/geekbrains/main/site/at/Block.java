@@ -38,7 +38,7 @@ public class Block {
     public Block(WebDriver driver) {
         this.driver = driver;
     }
-    @Step(value = "Ожидание загрузки результатов поиска")
+    @Step(value = "Ожидание загрузки результатов поиска ")
     public Search Waiting() {
         WebDriverWait wait = new WebDriverWait(driver, 40);
         wait.until(ExpectedConditions.textToBePresentInElement(textProfession, "Профессии"));

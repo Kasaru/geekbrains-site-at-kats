@@ -23,7 +23,7 @@ public class AuthPage {
         @FindBy(css = "[data-testid=\"login-submit\"")
         private WebElement buttonSignIn;
 
-        @Step("авторизация с логин : {login} , пароль : {password}")
+        @Step("авторизация с логином : {login} , паролем : {password}")
         public HomePage authorization(String login, String password) {
             inputLogin.sendKeys(login);
             inputPassword.sendKeys(password);
